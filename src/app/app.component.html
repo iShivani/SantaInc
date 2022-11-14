@@ -1,0 +1,57 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+
+    <!-- Side Menu Starts -->
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-content class="ion-padding">
+        <ion-menu-toggle auto-hide="false">
+          <ion-list class="ion-no-padding">
+            <ion-item lines="none" detail="false" color="green">
+              <ion-label>
+                <div class="app-logo"></div>
+                <div class="company-name margin-auto"></div>
+              </ion-label>
+            </ion-item>
+            <ion-list-header class="ion-text-wrap" color="green">
+              <ion-label color="light" class="font-size-12px ion-text-right regular-font-weight">{{'V4.1.2'}}</ion-label>
+            </ion-list-header>
+            <ion-item lines="none" detail="false" color="green"></ion-item>
+            <ion-item routerDirection="root" [routerLink]="[menu.url]" color="green" lines="none" detail="false" routerLinkActive="selected" class="menu-item-no-height"
+                      *ngFor="let menu of sideMenu; let i = index">
+              <ion-icon slot="start" [ios]="menu.icon + '-outline'" [md]="menu.icon + '-sharp'" class="ion-no-margin font-size-17px"></ion-icon>
+              <ion-text color="light" class="bold font-size-16px padding-left-10px">{{ menu.title }}</ion-text>
+            </ion-item>
+          </ion-list>
+          <ion-list class="ion-no-padding">
+            <ion-item lines="none" detail="false" color="green"></ion-item>
+            <ion-item lines="none" detail="false" color="green">
+              <ion-icon slot="start" name="barbell" class="ion-no-margin font-size-17px"></ion-icon>
+              <ion-text color="light" class="bold font-size-16px padding-left-10px">{{'Legal'}}</ion-text>
+            </ion-item>
+            <ion-item lines="none" detail="false" color="green"></ion-item>
+          </ion-list>
+          <ion-list class="ion-no-padding">
+            <ion-item lines="none" detail="false" color="green">
+              <ion-icon slot="start" name="log-out" class="ion-no-margin font-size-17px"></ion-icon>
+              <ion-text color="light" class="bold font-size-16px padding-left-10px">{{'Disconnect'}}</ion-text>
+            </ion-item>
+          </ion-list>
+        </ion-menu-toggle>
+      </ion-content>
+      <ion-footer class="ion-no-border">
+        <ion-item lines="none" detail="false" color="green">
+          <ion-grid>
+            <ion-row class="ion-align-items-center">
+              <ion-col class="ion-text-center">
+                <ion-text color="light" class="font-size-12px">{{'All rights reserved'}}</ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-footer>
+    </ion-menu>
+    <!-- Side Menu Ends -->
+
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

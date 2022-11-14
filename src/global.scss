@@ -1,0 +1,224 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+
+@font-face {
+  font-family: "bold-family";
+  src: url("theme/fonts/Poppins-Bold.ttf");
+}
+
+
+@font-face {
+  font-family: "semibold-family";
+  src: url("theme/fonts/Poppins-SemiBold.ttf");
+}
+
+
+@font-face {
+  font-family: "medium-family";
+  src: url("theme/fonts/Poppins-Medium.ttf");
+}
+
+
+@font-face {
+  font-family: "regular-family";
+  src: url("theme/fonts/Poppins-Regular.ttf");
+}
+
+
+:root {
+  --ion-color-green: #355E3B;
+  --ion-color-green-rgb: 53,94,59;
+  --ion-color-green-contrast: #ffffff;
+  --ion-color-green-contrast-rgb: 255,255,255;
+  --ion-color-green-shade: #2f5334;
+  --ion-color-green-tint: #496e4f;
+  --ion-font-family: "medium-family" !important;
+}
+
+.ion-color-green {
+  --ion-color-base: var(--ion-color-green);
+  --ion-color-base-rgb: var(--ion-color-green-rgb);
+  --ion-color-contrast: var(--ion-color-green-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-green-contrast-rgb);
+  --ion-color-shade: var(--ion-color-green-shade);
+  --ion-color-tint: var(--ion-color-green-tint);
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.font-size-17px {
+  font-size: 18px
+}
+
+.font-size-16px {
+  font-size: 16px
+}
+
+.font-size-14px {
+  font-size: 14px
+}
+
+.font-size-12px {
+  font-size: 12px
+}
+
+.regular-font-weight {
+  font-weight: 300 !important;
+  font-family: "regular-family";
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.margin-top-40px {
+  margin-top: 40px;
+}
+
+.margin-left-40px {
+  margin-left: 40px;
+}
+
+.padding-left-15rem {
+  --padding-start: clamp(16px, 15rem, 15vw)
+}
+
+.padding-left-10px {
+  padding-left: 10px;
+}
+
+.padding-top-50px {
+  padding-top: 50px;
+}
+
+.padding-bottom-50px {
+  padding-bottom: 50px;
+}
+
+.menu-item-no-height {
+  --min-height: 30px;
+}
+
+:host(.menu-side-start) .menu-inner {
+  width: 250px;
+}
+
+ion-menu {
+  --background: #355E3B;
+}
+
+ion-menu ion-content {
+  --background: #355E3B;
+  width: 250px;
+}
+
+ion-menu ion-footer {
+  --background: #355E3B;
+  width: 250px;
+}
+/*.split-pane-side:first-child {
+  min-width: 250px !important;
+  max-width: 250px !important;
+}*/
+
+.split-pane-side:first-child {
+  min-width: 250px !important;
+  width: 250px !important;
+  max-width: 250px !important;
+}
+
+.app-logo {
+  background-image: url(assets/logo.png);
+  height: 100px;
+  width: 100px;
+  background-repeat: no-repeat;
+  border-radius: 320px;
+  background-position: center;
+  background-size: contain;
+  margin: 20px auto;
+}
+
+.company-name {
+  background-image: url(assets/company-name.png);
+  height: 60px;
+  width: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.delivery-list-header {
+  background-image: url(assets/delivery-list.jpg);
+  height: 60px;
+  width: 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pine-image-header {
+  background-image: url(assets/pine.png);
+  height: 200px;
+  width: 300px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.not-elligle {
+  background: #c07b7b;
+}
+
+.border-bottom {
+  border-bottom: 3px solid black !important;
+}
+
+.border-right {
+  border-right: 1px solid black !important;
+}
+
+
+.ion-content-padding {
+  --padding-start: clamp(16px, 15rem, 15vw);
+  --padding-end: clamp(16px, 15rem, 15vw);
+  padding-left: clamp(16px, 15rem, 15vw);
+  padding-right: clamp(16px, 15rem, 15vw);
+}
+
+.unset-item-inner {
+  --inner-padding-end: 0px !important
+}

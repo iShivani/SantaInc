@@ -1,0 +1,88 @@
+<ion-header [translucent]="true" *ngIf="!isBigScreen">
+  <ion-toolbar color="green">
+    <ion-buttons slot="start">
+      <ion-menu-button style="font-size:72px"></ion-menu-button>
+    </ion-buttons>
+
+    <div class="company-name ion-float-right ion-margin-end" style="margin-top:-16px">
+      <ion-text class="font-size-12px ion-text-right regular-font-weight ion-float-right margin-top-40px" style="padding-top:5px">{{'V4.1.2'}}</ion-text>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-item lines="none" detail="false" class="unset-item-inner" *ngIf="isBigScreen">
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col size="auto">
+        <div class="pine-image-header"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>
+
+<ion-content [ngClass]="{'ion-content-padding': isBigScreen}">
+  <ion-item lines="none" detail="false" [ngClass]="{'padding-bottom-50px': isBigScreen}">
+    <div class="delivery-list-header" [ngClass]="{'margin-left-40px': isBigScreen, 'ion-margin-top': !isBigScreen}"></div>
+  </ion-item>
+
+  <ion-grid class="font-size-14px break-word">
+
+    <ion-row class="ion-text-left">
+      <ion-col size-lg="2.5" size-md="2.5" size-sm="3" class="border-right border-bottom">
+        <ion-text style="padding-left:3px">First Name</ion-text>
+      </ion-col>
+
+      <ion-col size-lg="2.5" size-md="2.5" size-sm="3" class="border-right border-bottom">
+        <ion-text style="padding-left:3px">Last Name</ion-text>
+      </ion-col>
+
+      <ion-col size-lg="4" size-md="4" size-sm="3" class="border-right border-bottom">
+        <ion-text style="padding-left:3px">Address</ion-text>
+      </ion-col>
+
+      <ion-col size="3" class="border-bottom">
+        <ion-text style="padding-left:3px">Wishes</ion-text>
+      </ion-col>
+    </ion-row>
+
+
+    <ng-container *ngFor="let kid of kidsListToDisplay; index as i">
+      <ion-row class="ion-text-left" [ngClass]="{'not-elligle': kid.isElligible === false}">
+        <ion-col size-lg="2.5" size-md="2.5" size-sm="3" class="border-right">
+          <ion-text style="padding-left:3px">{{kid.firstName}}</ion-text>
+        </ion-col>
+
+        <ion-col size-lg="2.5" size-md="2.5" size-sm="3" class="border-right">
+          <ion-text style="padding-left:3px">{{kid.lastName}}</ion-text>
+        </ion-col>
+
+        <ion-col size-lg="4" size-md="4" size-sm="3" class="border-right">
+          <ion-text style="padding-left:3px">{{kid.address}}</ion-text>
+        </ion-col>
+
+        <ion-col size="3">
+          <ion-text style="padding-left:3px">{{kid.wishes}}</ion-text>
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="ion-no-border ion-padding-vertical">
+  <ion-item lines="none" detail="false" [ngClass]="{'padding-left-15rem': isBigScreen}" class="">
+    <ion-button fill="clear" color="green" size="small" class="ion-no-margin" (click)="insertPreviousPageNumber()" mode="md">
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-button>
+    <ng-container *ngFor="let page of displayPageNumbers; index as i">
+      <ion-button fill="clear" [color]="currentPage != page? 'green': 'danger'" (click)="setCurrentPage(page)" mode="ios" class="ion-no-margin">
+        <ion-text [color]="currentPage != page? 'green': 'danger'" class="font-size-16px">{{page}}</ion-text>
+      </ion-button>
+    </ng-container>
+    <ion-button fill="clear" color="green" size="small" class="ion-no-margin" (click)="insertNextPageNumber()" mode="md">
+      <ion-icon name="arrow-forward-circle"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-footer>
